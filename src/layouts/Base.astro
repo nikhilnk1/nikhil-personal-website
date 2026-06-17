@@ -1,0 +1,253 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Sydney-based technology leader, author, and community builder." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} | Nikhil Kulkarni</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/" class="nav-home">Nikhil Kulkarni</a>
+        <ul class="nav-list">
+          <li><a href="/about">About</a></li>
+
+          <li class="has-dropdown">
+            <a href="/ai-product">AI &amp; Product</a>
+            <ul class="dropdown">
+              <li><a href="/atlassian">Atlassian</a></li>
+              <li><a href="/advisory">Startup Advisory</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <a href="/community">Community &amp; Ecosystem</a>
+            <ul class="dropdown">
+              <li><a href="/australia-india">Australia–India Bilateral</a></li>
+              <li><a href="/ispirit">iSPIRT Fellow</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <a href="/author">Author &amp; Commentator</a>
+            <ul class="dropdown">
+              <li><a href="/book">My Summer of Cricket</a></li>
+              <li><a href="/writing">Opinion Writer</a></li>
+            </ul>
+          </li>
+
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/recognition">Recognition</a></li>
+          <li><a href="/contact" class="contact-link">Contact Nikhil</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <p>&copy; {new Date().getFullYear()} Nikhil Kulkarni</p>
+      <ul>
+        <li><a href="https://linkedin.com/in/nikhilnk" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://x.com/nikhilnk" target="_blank" rel="noopener">X</a></li>
+        <li><a href="https://instagram.com/nikhilnk1" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --accent: #0891b2;
+    --accent-dark: #0e7490;
+    --text: #474747;
+    --text-light: #6b6b6b;
+    --border: #e5e5e5;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: #ffffff;
+    line-height: 1.6;
+  }
+
+  /* Global link colour */
+  a {
+    color: var(--accent);
+  }
+
+  header {
+    border-top: 5px solid var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 100;
+  }
+
+  nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav-home {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #1a1a1a;
+    white-space: nowrap;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-list > li {
+    position: relative;
+  }
+
+  .nav-list a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.875rem;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-list > li > a:hover {
+    color: var(--accent);
+  }
+
+  /* Dropdown trigger indicator */
+  .has-dropdown > a::after {
+    content: ' ▾';
+    font-size: 0.7rem;
+    opacity: 0.6;
+  }
+
+  /* Dropdown panel */
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--accent);
+    border-radius: 0 0 6px 6px;
+    min-width: 200px;
+    padding: 0.75rem 0 0.5rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    list-style: none;
+    z-index: 200;
+  }
+
+  /* Invisible bridge fills the gap between nav item and dropdown panel */
+  .has-dropdown::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 0.75rem;
+    background: transparent;
+  }
+
+  .dropdown li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text);
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .dropdown li a:hover {
+    background: #f0f7fa;
+    color: var(--accent);
+  }
+
+  /* Show dropdown on hover and keyboard focus */
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown {
+    display: block;
+  }
+
+  /* Contact button */
+  .contact-link {
+    background: var(--accent) !important;
+    color: #ffffff !important;
+    padding: 0.4rem 0.9rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    transition: background 0.2s !important;
+    text-decoration: none;
+  }
+
+  .contact-link:hover {
+    background: var(--accent-dark) !important;
+    color: #ffffff !important;
+  }
+
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    font-size: 0.875rem;
+    color: var(--text-light);
+  }
+
+  footer ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  footer a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  footer a:hover {
+    color: var(--accent);
+  }
+</style>
