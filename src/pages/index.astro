@@ -5,121 +5,109 @@ import Base from '../layouts/Base.astro';
 <Base title="Home" description="Sydney-based technology leader, author, and community builder.">
 
   <section class="hero">
-    <div class="hero-text">
-      <h1>Nikhil Kulkarni</h1>
-      <p class="tagline">Sydney-based technology leader, author, and community builder.</p>
-      <p class="sub">AI product practitioner. Published commentator. Active voice at the Australia–India intersection.</p>
-      <a href="/about" class="cta">About me &rarr;</a>
-    </div>
-    <div class="hero-photo">
-      <img src="/images/author-pic.jpg" alt="Nikhil Kulkarni" />
+    <img src="/images/hero-speaking.jpg" alt="" class="hero-bg" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Hi, I'm Nikhil.</h1>
+      <p class="hero-sub">Nice to meet you.</p>
+      <hr class="hero-rule" />
     </div>
   </section>
 
-  <section class="pillars">
-    <a href="/ai-product" class="pillar-card card-ai">
-      <div class="card-image">
-        <img src="/images/atlassian-speaking.jpg" alt="Nikhil speaking at Atlassian" />
-      </div>
-      <h2>AI &amp; Product Leadership</h2>
-      <p>Founding PM lead for Rovo, Atlassian's AI product. 20+ years across ecommerce, B2B SaaS, and startups.</p>
-    </a>
-    <a href="/australia-india" class="pillar-card card-india">
-      <div class="card-image">
-        <img src="/images/new-india-house.jpg" alt="Nikhil speaking at New India House, SXSW Sydney" />
-      </div>
-      <h2>Australia–India</h2>
-      <p>AIBC NSW Committee. Australia India Youth Dialogue. New India House at SXSW Sydney 2025. LBW Trust Ambassador.</p>
-    </a>
-    <a href="/writing" class="pillar-card card-writing">
-      <div class="card-image">
-        <img src="/images/writing-smh.jpg" alt="Nikhil Kulkarni opinion piece in the Sydney Morning Herald" />
-      </div>
-      <h2>Writing &amp; Commentary</h2>
-      <p>Opinion pieces in the Sydney Morning Herald, Australian Financial Review, and Canberra Times. 170+ blog posts.</p>
-    </a>
-    <a href="/book" class="pillar-card card-book">
-      <div class="card-image">
-        <img src="/images/book-tv.jpg" alt="Nikhil Kulkarni on Channel 9 Today Extra, Author of My Summer of Cricket" />
-      </div>
-      <h2>Book</h2>
-      <p><em>My Summer of Cricket</em> — on cricket, migration, identity, and belonging. Featured on Channel 9's Today.</p>
-    </a>
-  </section>
+  <p class="intro">
+    I am an <a href="/ai-product">AI and Product Management leader</a>,
+    an active <a href="/australia-india">community voice and ecosystem builder</a>
+    and <a href="/writing">author and commentator</a>.
+    I enjoy trivia and love a good pun!
+  </p>
 
-  <section class="now">
-    <p>
-      Currently independent — following 7.5 years at Atlassian. Open to advisory, speaking, and strategic conversations.
-      <a href="/contact">Get in touch &rarr;</a>
-    </p>
-  </section>
+
 
 </Base>
 
 <style>
   .hero {
-    padding: 4rem 0 3rem;
-    border-bottom: 1px solid #e5e5e5;
-    margin-bottom: 3rem;
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-  }
-
-  .hero-text {
-    flex: 1;
-  }
-
-  .hero-photo {
-    flex-shrink: 0;
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: clamp(320px, 46vh, 480px);
     overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-bottom: 3rem;
   }
 
-  .hero-photo img {
+  .hero-bg {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
-    display: block;
+    object-position: center 18%;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to left, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.4) 45%, rgba(0,0,0,0.0) 100%),
+      linear-gradient(to bottom, rgba(0,0,0,0.0) 50%, rgba(0,0,0,0.25) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 5rem 1.5rem 2rem;
+    max-width: 640px;
   }
 
   h1 {
     font-family: 'Lora', serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(3.4rem, 6vw, 6rem);
     font-weight: 600;
-    line-height: 1.1;
-    margin-bottom: 1rem;
+    line-height: 1.05;
+    color: #fff;
+    margin: 0 0 0.4rem;
+    white-space: nowrap;
   }
 
-  .tagline {
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    color: #333;
-    margin-bottom: 0.5rem;
+  .hero-sub {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.9rem, 3.8vw, 3.6rem);
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    margin: 0 0 1.2rem;
+    line-height: 1.2;
   }
 
-  .sub {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 1.5rem;
+  .hero-rule {
+    border: none;
+    border-top: 2px solid #5eead4;
+    margin: 0;
+    width: 60px;
   }
 
-  .cta {
-    display: inline-block;
-    font-size: 0.95rem;
-    font-weight: 500;
+  .intro {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.4rem, 2.9vw, 2rem);
+    color: #1a1a1a;
+    line-height: 1.6;
+    margin: 2.5rem 0 3rem;
+  }
+
+  .intro a {
     color: #1a1a1a;
     text-decoration: none;
-    border-bottom: 2px solid #1a1a1a;
-    padding-bottom: 2px;
-    transition: opacity 0.2s;
+    border-bottom: 2px solid #5eead4;
+    transition: color 0.2s;
   }
 
-  .cta:hover {
-    opacity: 0.6;
+  .intro a:hover {
+    color: #0d9488;
   }
+
 
   .pillars {
     display: grid;
@@ -226,15 +214,13 @@ import Base from '../layouts/Base.astro';
   }
 
   @media (max-width: 640px) {
-    .hero {
-      flex-direction: column-reverse;
-      align-items: flex-start;
-      gap: 1.5rem;
+    .hero-content {
+      padding: 0 1.5rem 2.5rem;
+      max-width: 100%;
     }
 
-    .hero-photo img {
-      width: 140px;
-      height: 140px;
+    h1 {
+      white-space: normal;
     }
   }
 </style>
