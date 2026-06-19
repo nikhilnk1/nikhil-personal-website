@@ -24,6 +24,11 @@ const { title, description = "Sydney-based technology leader, author, and commun
     <header>
       <nav>
         <a href="/" class="nav-home">Nikhil Kulkarni</a>
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <ul class="nav-list">
           {navItems.map((item) => (
             <li class="has-dropdown">
@@ -322,7 +327,88 @@ const { title, description = "Sydney-based technology leader, author, and commun
   .social-x        { color: #000000; }
   .social-instagram { color: #E4405F; }
 
+  /* Hamburger button — hidden on desktop */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 4px;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  /* Animate to X when open */
+  .menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle.open span:nth-child(2) { opacity: 0; }
+  .menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
   @media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+
+    .nav-list {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-bottom: 3px solid var(--accent);
+      flex-direction: column;
+      gap: 0;
+      padding: 0.5rem 0 1rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      flex-wrap: nowrap;
+    }
+
+    .nav-list.open { display: flex; }
+
+    .nav-list > li {
+      width: 100%;
+    }
+
+    /* Nav labels become tap targets on mobile */
+    .nav-label {
+      display: block;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    /* Override hover-based dropdown, use .open class instead */
+    .has-dropdown:hover .dropdown { display: none; }
+    .has-dropdown.open .dropdown  { display: block; }
+
+    .dropdown {
+      position: static;
+      box-shadow: none;
+      border: none;
+      border-left: 3px solid var(--accent);
+      border-radius: 0;
+      margin: 0 0 0.25rem 1.5rem;
+      padding: 0.25rem 0;
+    }
+
+    .dropdown li a {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-link {
+      margin: 0.75rem 1.5rem 0;
+      display: inline-block;
+    }
+
     .footer-nav {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -332,3 +418,32 @@ const { title, description = "Sydney-based technology leader, author, and commun
     color: var(--accent);
   }
 </style>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle') as HTMLButtonElement;
+  const navList = document.querySelector('.nav-list') as HTMLUListElement;
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = navList.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Tap to expand dropdowns on mobile
+  document.querySelectorAll<HTMLElement>('.has-dropdown .nav-label').forEach(label => {
+    label.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        label.closest('.has-dropdown')?.classList.toggle('open');
+      }
+    });
+  });
+
+  // Close menu when a link is tapped
+  navList?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navList.classList.remove('open');
+      toggle?.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
