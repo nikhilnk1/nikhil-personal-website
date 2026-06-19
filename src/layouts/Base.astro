@@ -1,4 +1,6 @@
 ---
+import { navItems } from '../data/nav';
+
 interface Props {
   title: string;
   description?: string;
@@ -16,41 +18,23 @@ const { title, description = "Sydney-based technology leader, author, and commun
     <title>{title} | Nikhil Kulkarni</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <header>
       <nav>
         <a href="/" class="nav-home">Nikhil Kulkarni</a>
         <ul class="nav-list">
-          <li><a href="/about">About</a></li>
-
-          <li class="has-dropdown">
-            <a href="/ai-product">AI &amp; Product</a>
-            <ul class="dropdown">
-              <li><a href="/atlassian">Atlassian</a></li>
-              <li><a href="/advisory">Startup Advisory</a></li>
-            </ul>
-          </li>
-
-          <li class="has-dropdown">
-            <a href="/community">Community &amp; Ecosystem</a>
-            <ul class="dropdown">
-              <li><a href="/australia-india">Australia–India Bilateral</a></li>
-              <li><a href="/ispirit">iSPIRT Fellow</a></li>
-            </ul>
-          </li>
-
-          <li class="has-dropdown">
-            <a href="/author">Author &amp; Commentator</a>
-            <ul class="dropdown">
-              <li><a href="/book">My Summer of Cricket</a></li>
-              <li><a href="/writing">Opinion Writer</a></li>
-            </ul>
-          </li>
-
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/recognition">Recognition</a></li>
+          {navItems.map((item) => (
+            <li class="has-dropdown">
+              <span class="nav-label">{item.label}</span>
+              <ul class="dropdown">
+                {item.children.map((child) => (
+                  <li><a href={child.href}>{child.label}</a></li>
+                ))}
+              </ul>
+            </li>
+          ))}
           <li><a href="/contact" class="contact-link">Contact Nikhil</a></li>
         </ul>
       </nav>
@@ -61,20 +45,42 @@ const { title, description = "Sydney-based technology leader, author, and commun
     </main>
 
     <footer>
-      <p>&copy; {new Date().getFullYear()} Nikhil Kulkarni</p>
-      <ul>
-        <li><a href="https://linkedin.com/in/nikhilnk" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://x.com/nikhilnk" target="_blank" rel="noopener">X</a></li>
-        <li><a href="https://instagram.com/nikhilnk1" target="_blank" rel="noopener">Instagram</a></li>
-      </ul>
+      <nav class="footer-nav">
+        {navItems.map((item) => (
+          <div class="footer-col">
+            <span class="footer-col-heading">{item.label}</span>
+            {item.children.map((child) => (
+              <a href={child.href}>{child.label}</a>
+            ))}
+          </div>
+        ))}
+        <div class="footer-col">
+          <span class="footer-col-heading">Contact</span>
+          <a href="/contact">Get in touch</a>
+        </div>
+      </nav>
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Nikhil Kulkarni</p>
+        <div class="footer-social">
+          <a href="https://linkedin.com/in/nikhilnk" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-linkedin">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://x.com/nikhilnk" target="_blank" rel="noopener" aria-label="X" class="social-x">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          </a>
+          <a href="https://instagram.com/nikhilnk1" target="_blank" rel="noopener" aria-label="Instagram" class="social-instagram">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
 
 <style is:global>
   :root {
-    --accent: #0891b2;
-    --accent-dark: #0e7490;
+    --accent: #c2613f;
+    --accent-dark: #a84e30;
     --text: #474747;
     --text-light: #6b6b6b;
     --border: #e5e5e5;
@@ -87,7 +93,7 @@ const { title, description = "Sydney-based technology leader, author, and commun
   }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lora', serif;
     color: var(--text);
     background: #ffffff;
     line-height: 1.6;
@@ -101,7 +107,7 @@ const { title, description = "Sydney-based technology leader, author, and commun
   header {
     border-top: 5px solid var(--accent);
     border-bottom: 1px solid var(--border);
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     position: relative;
     z-index: 100;
   }
@@ -109,10 +115,12 @@ const { title, description = "Sydney-based technology leader, author, and commun
   nav {
     max-width: 1100px;
     margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+    font-family: 'Nunito Sans', sans-serif;
   }
 
   .nav-home {
@@ -147,11 +155,23 @@ const { title, description = "Sydney-based technology leader, author, and commun
     color: var(--accent);
   }
 
-  /* Dropdown trigger indicator */
-  .has-dropdown > a::after {
+  /* Dropdown label (non-link trigger) */
+  .nav-label {
+    font-size: 0.875rem;
+    color: var(--text);
+    cursor: default;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  .nav-label::after {
     content: ' ▾';
     font-size: 0.7rem;
     opacity: 0.6;
+  }
+
+  .has-dropdown:hover .nav-label {
+    color: var(--accent);
   }
 
   /* Dropdown panel */
@@ -191,7 +211,7 @@ const { title, description = "Sydney-based technology leader, author, and commun
   }
 
   .dropdown li a:hover {
-    background: #f0f7fa;
+    background: #fdf5f2;
     color: var(--accent);
   }
 
@@ -225,26 +245,87 @@ const { title, description = "Sydney-based technology leader, author, and commun
 
   footer {
     border-top: 1px solid var(--border);
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 2.5rem 2rem 2rem;
     max-width: 1100px;
     margin: 0 auto;
-    font-size: 0.875rem;
-    color: var(--text-light);
+    font-family: 'Nunito Sans', sans-serif;
   }
 
-  footer ul {
-    list-style: none;
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: start;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .footer-col {
     display: flex;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  footer a {
+  .footer-col-heading {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: flex-start;
+    transition: color 0.2s;
+    line-height: 1.4;
+  }
+
+
+  .footer-col a {
+    font-size: 0.82rem;
     color: var(--text-light);
     text-decoration: none;
     transition: color 0.2s;
+    line-height: 1.5;
+  }
+
+  .footer-col a:hover {
+    color: var(--accent);
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: #aaa;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 1.1rem;
+    align-items: center;
+  }
+
+  .footer-social a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s;
+  }
+
+  .footer-social a:hover { opacity: 0.75; }
+
+  .social-linkedin { color: #0A66C2; }
+  .social-x        { color: #000000; }
+  .social-instagram { color: #E4405F; }
+
+  @media (max-width: 768px) {
+    .footer-nav {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   footer a:hover {
