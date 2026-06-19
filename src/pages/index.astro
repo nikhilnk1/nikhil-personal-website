@@ -1,5 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const allHighlights = await getCollection('highlights');
+const highlights = allHighlights
+  .filter(h => h.data.featured)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 6);
+
+const typeLabel: Record<string, string> = {
+  article: 'Published',
+  event: 'Speaking',
+  media: 'In the Media',
+  note: 'Note',
+};
 ---
 
 <Base title="Home" description="Sydney-based technology leader, author, and community builder.">
@@ -14,14 +28,52 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <p class="intro">
-    I am an <a href="/ai-product">AI and Product Management leader</a>,
-    an active <a href="/australia-india">community voice and ecosystem builder</a>
-    and <a href="/writing">author and commentator</a>.
-    I enjoy trivia and love a good pun!
-  </p>
+  <div class="bio">
+    <p class="bio-lead">I create impact at the intersection of technology, community, and creativity.</p>
+    <p>With nearly 20 years of experience across Australia and India, I've held senior roles at <a href="/atlassian">Atlassian</a> and Flipkart — most recently on the founding team behind <a href="/ai-product">Rovo, Atlassian's AI product</a>, focused on enterprise adoption at scale. I think carefully about how AI gets adopted, where it creates real value, and how to keep the human element strong.</p>
+    <p>Beyond technology, I'm an active community leader <a href="/australia-india">bridging Australia and India</a> across technology, talent, and culture — through the Australia India Business Council, Australia India Youth Dialogue, and as a Fellow at <a href="/ispirit">iSPIRT</a>, the think tank behind India's Digital Public Infrastructure.</p>
+    <p>I'm also the <a href="/book">author of <em>My Summer of Cricket</em></a>, with opinion pieces published in the <a href="/writing">Sydney Morning Herald, AFR, and Canberra Times</a>. An avid quizzer with multiple Mastermind appearances — and a proudly punny bone.</p>
+  </div>
 
-
+  <section class="highlights">
+    <div class="highlights-header">
+      <h2 class="highlights-heading">Recent highlights</h2>
+      <div class="carousel-controls">
+        <button id="highlights-prev" class="carousel-btn" aria-label="Previous" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button id="highlights-next" class="carousel-btn" aria-label="Next">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="highlights-grid" id="highlights-track">
+      {highlights.map((item) => (
+        <article class={`highlight-card type-${item.data.type}`}>
+          {item.data.image && (
+            <div class="highlight-img-wrap">
+              <img src={item.data.image} alt="" class="highlight-img" loading="lazy" />
+            </div>
+          )}
+          <div class="highlight-body">
+            <span class="highlight-type">{typeLabel[item.data.type]}</span>
+            <h3 class="highlight-title">
+              {item.data.url
+                ? <a href={item.data.url} target="_blank" rel="noopener">{item.data.title}</a>
+                : item.data.title}
+            </h3>
+            <p class="highlight-summary">{item.data.summary}</p>
+            <footer class="highlight-meta">
+              {item.data.publication && <span class="highlight-pub">{item.data.publication}</span>}
+              <time datetime={item.data.date.toISOString()}>
+                {item.data.date.toLocaleDateString('en-AU', { month: 'long', year: 'numeric' })}
+              </time>
+            </footer>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
 
 </Base>
 
@@ -35,7 +87,8 @@ import Base from '../layouts/Base.astro';
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    margin-bottom: 3rem;
+    margin-top: -3rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-bg {
@@ -58,8 +111,9 @@ import Base from '../layouts/Base.astro';
   .hero-content {
     position: relative;
     z-index: 1;
-    padding: 0 5rem 1.5rem 2rem;
+    padding: 0 2rem 1.5rem 2rem;
     max-width: 640px;
+    margin-right: max(2rem, calc(50vw - 550px + 2rem));
   }
 
   h1 {
@@ -84,139 +138,210 @@ import Base from '../layouts/Base.astro';
 
   .hero-rule {
     border: none;
-    border-top: 2px solid #5eead4;
+    border-top: 2px solid #c2613f;
     margin: 0;
     width: 60px;
   }
 
-  .intro {
+  .bio {
+    margin: 0 0 4rem;
     font-family: 'Lora', serif;
-    font-size: clamp(1.4rem, 2.9vw, 2rem);
-    color: #1a1a1a;
-    line-height: 1.6;
-    margin: 2.5rem 0 3rem;
   }
 
-  .intro a {
+  .bio-lead {
+    font-size: clamp(1.3rem, 2.2vw, 1.7rem) !important;
+    font-weight: 600;
+    color: #1a1a1a !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .bio p {
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    color: #333;
+    line-height: 1.85;
+    margin-bottom: 1.5rem;
+  }
+
+  .bio p:last-child {
+    margin-bottom: 0;
+  }
+
+  .bio a {
     color: #1a1a1a;
     text-decoration: none;
-    border-bottom: 2px solid #5eead4;
+    border-bottom: 1.5px solid #c2613f;
     transition: color 0.2s;
   }
 
-  .intro a:hover {
-    color: #0d9488;
+  .bio a:hover {
+    color: #a84e30;
   }
 
-
-  .pillars {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+  /* ── Highlights ── */
+  .highlights {
+    margin-bottom: 4rem;
   }
 
-  .pillar-card {
-    display: block;
-    padding: 1.75rem;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
-    text-decoration: none;
-    color: inherit;
-    transition: border-color 0.2s, box-shadow 0.2s;
+  .highlights-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
   }
 
-  .pillar-card:hover {
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  .highlights-heading {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #999;
+    margin: 0;
   }
 
-  /* Photo strip cards — remove default padding, re-apply inside */
-  .card-ai,
-  .card-india,
-  .card-book,
-  .card-writing {
+  .carousel-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .carousel-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1.5px solid #ddd;
+    background: #fff;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
     padding: 0;
   }
 
-  .card-ai h2, .card-ai p,
-  .card-india h2, .card-india p,
-  .card-book h2, .card-book p,
-  .card-writing h2, .card-writing p {
-    padding: 0 1.75rem;
+  .carousel-btn:hover:not(:disabled) {
+    border-color: #c2613f;
+    color: #c2613f;
+    background: #fdf5f2;
   }
 
-  .card-ai h2, .card-india h2,
-  .card-book h2, .card-writing h2 {
-    padding-top: 1.25rem;
+  .carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
   }
 
-  .card-ai p, .card-india p,
-  .card-book p, .card-writing p {
-    padding-bottom: 1.75rem;
+  .highlights-grid {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    margin-right: -2rem;
+    padding-right: 2rem;
+    scrollbar-width: none;
   }
 
-  .card-image {
+  .highlights-grid::-webkit-scrollbar { display: none; }
+
+  .highlight-card {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    border-top: 3px solid #c2613f;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .highlight-img-wrap {
     width: 100%;
     height: 160px;
     overflow: hidden;
-    border-radius: 7px 7px 0 0;
+    flex-shrink: 0;
   }
 
-  .card-image img {
+  .highlight-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center;
+    transition: transform 0.3s ease;
   }
 
-  /* Coloured borders per pillar */
-  .card-ai      { border-color: #2563eb; }
-  .card-india   { border-color: #f59e0b; }
-  .card-writing { border-color: #16a34a; }
-  .card-book    { border-color: #dc2626; }
-
-  /* Zoom in on the Australia-India card */
-  .card-india .card-image img {
-    transform: scale(1.3);
-    transform-origin: center center;
+  .highlight-card:hover .highlight-img {
+    transform: scale(1.03);
   }
 
-  /* Shift book card left so the name lower-third is visible */
-  .card-book .card-image img {
-    object-position: left center;
+  .highlight-body {
+    padding: 1.1rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
   }
 
-  .pillar-card h2 {
+  .highlight-type {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c2613f;
+  }
+
+  .highlight-title {
     font-family: 'Lora', serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.6rem;
+    line-height: 1.4;
+    color: #1a1a1a;
+    margin: 0;
   }
 
-  .pillar-card p {
+  .highlight-title a {
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: none;
+    transition: color 0.2s;
+  }
+
+  .highlight-title a:hover {
+    color: #c2613f;
+  }
+
+  .highlight-summary {
+    font-family: 'Lora', serif;
     font-size: 0.9rem;
     color: #555;
-    line-height: 1.5;
+    line-height: 1.7;
+    margin: 0;
+    flex: 1;
   }
 
-  .now {
-    padding: 1.5rem;
-    background: #f9f9f9;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    color: #444;
+  .highlight-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    margin-top: 0.5rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.78rem;
+    color: #999;
   }
 
-  .now a {
-    color: #1a1a1a;
-    font-weight: 500;
-    margin-left: 0.5rem;
+  .highlight-pub {
+    font-weight: 600;
+    color: #777;
+  }
+
+  @media (max-width: 640px) {
+    .highlight-card { flex: 0 0 80vw; }
+    .highlights-grid { margin-right: -1rem; padding-right: 1rem; }
   }
 
   @media (max-width: 640px) {
     .hero-content {
       padding: 0 1.5rem 2.5rem;
       max-width: 100%;
+      margin-right: 0;
     }
 
     h1 {
@@ -224,3 +349,31 @@ import Base from '../layouts/Base.astro';
     }
   }
 </style>
+
+<script>
+  const track = document.getElementById('highlights-track') as HTMLElement;
+  const prevBtn = document.getElementById('highlights-prev') as HTMLButtonElement;
+  const nextBtn = document.getElementById('highlights-next') as HTMLButtonElement;
+
+  function getScrollStep() {
+    const card = track.querySelector('.highlight-card') as HTMLElement;
+    return card ? card.offsetWidth + 24 : 320;
+  }
+
+  function updateButtons() {
+    prevBtn.disabled = track.scrollLeft <= 4;
+    nextBtn.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+  });
+
+  track.addEventListener('scroll', updateButtons, { passive: true });
+  updateButtons();
+</script>
+
