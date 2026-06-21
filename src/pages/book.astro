@@ -50,8 +50,6 @@ import Base from '../layouts/Base.astro';
     <section class="section">
       <h2>Media coverage</h2>
 
-      <div class="media-subgroup-label">Australia &amp; New Zealand</div>
-
       <div class="media-item featured">
         <div class="media-outlet">Channel 9 · Today Extra</div>
         <div class="media-detail">Television interview · November 2025</div>
@@ -112,16 +110,21 @@ import Base from '../layouts/Base.astro';
       </div>
 
       <div class="media-item">
+        <div class="media-outlet">Cricket Library Podcast</div>
+        <div class="media-detail">With Matt Ellis · March 2026</div>
+        <a href="https://open.spotify.com/episode/2RLFp7Pcp1O6FXVLld4ErR" target="_blank" rel="noopener" class="media-link">Listen →</a>
+      </div>
+
+      <div class="media-item">
         <div class="media-outlet">Indian Link</div>
         <div class="media-detail">Book review · October 2025</div>
         <a href="https://www.indianlink.com.au/book-review-nikhil-kulkarnis-my-summer-of-cricket/" target="_blank" rel="noopener" class="media-link">Read →</a>
       </div>
 
-      <div class="media-subgroup-label">India</div>
-
       <div class="media-item">
         <div class="media-outlet">Hindustan Times</div>
         <div class="media-detail">Book review · June 2026</div>
+        <a href="https://epaper.hindustantimes.com/Home/ShareArticle?OrgId=5640372aef&imageview=0" target="_blank" rel="noopener" class="media-link">Read →</a>
       </div>
 
       <div class="media-item">
@@ -329,25 +332,6 @@ import Base from '../layouts/Base.astro';
 
   .media-item.featured .media-outlet {
     color: #c2613f;
-  }
-
-  .media-subgroup-label {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #c2613f;
-    padding-top: 1.5rem;
-    padding-bottom: 0.25rem;
-    margin-top: 0.5rem;
-    border-top: 1px solid #e5e5e5;
-  }
-
-  .media-subgroup-label:first-of-type {
-    border-top: none;
-    padding-top: 0;
-    margin-top: 0;
   }
 
   .media-outlet {
