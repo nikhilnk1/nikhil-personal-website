@@ -7,23 +7,24 @@ import Base from '../layouts/Base.astro';
   <div class="page-header">
     <p class="page-label">About</p>
     <h1>In the Media</h1>
-    <p class="intro">On cricket, <em>My Summer of Cricket</em>, Mastermind, sport, and the Australia–India relationship.</p>
+    <p class="intro">Television, radio, podcast, and press appearances across Australia and India — on cricket fandom, authorship, sport and inclusion, the Australia–India relationship, and trivia.</p>
   </div>
 
   <div class="content">
 
-    <div class="tab-nav" role="tablist">
-      <button class="tab-btn active" data-tab="tv" role="tab" aria-selected="true">Television</button>
-      <button class="tab-btn" data-tab="radio" role="tab" aria-selected="false">Radio</button>
-      <button class="tab-btn" data-tab="podcasts" role="tab" aria-selected="false">Podcasts</button>
-      <button class="tab-btn" data-tab="press" role="tab" aria-selected="false">Press</button>
-    </div>
+    <nav class="pill-nav" aria-label="Jump to section">
+      <a href="#television" class="pill">Television</a>
+      <a href="#radio" class="pill">Radio</a>
+      <a href="#podcasts" class="pill">Podcasts</a>
+      <a href="#press" class="pill">Press</a>
+    </nav>
 
-    <div class="tab-panel active" id="tab-tv" role="tabpanel">
+    <section class="media-section" id="television">
+      <h2 class="section-label">Television</h2>
 
       <div class="media-embed-item">
-        <div class="media-outlet">Channel 9: Today Extra</div>
-        <div class="media-detail">Interview on <em>My Summer of Cricket</em> · November 2025</div>
+        <div class="media-outlet">Channel 9: Today Extra <span class="year">· November 2025</span></div>
+        <div class="media-detail">Interview on <em>My Summer of Cricket</em></div>
         <div class="embed-wrap">
           <iframe
             src="https://www.youtube.com/embed/3u32GKL4T9g"
@@ -36,8 +37,8 @@ import Base from '../layouts/Base.astro';
       </div>
 
       <div class="media-embed-item">
-        <div class="media-outlet">Mastermind Australia</div>
-        <div class="media-detail">Contestant · 2024</div>
+        <div class="media-outlet">Mastermind Australia <span class="year">· 2024</span></div>
+        <div class="media-detail">Contestant</div>
         <div class="embed-wrap">
           <iframe
             src="https://www.youtube.com/embed/FH66X_YsdtU"
@@ -50,8 +51,8 @@ import Base from '../layouts/Base.astro';
       </div>
 
       <div class="media-embed-item">
-        <div class="media-outlet">Mastermind Australia</div>
-        <div class="media-detail">Contestant · 2020</div>
+        <div class="media-outlet">Mastermind Australia <span class="year">· 2020</span></div>
+        <div class="media-detail">Contestant</div>
         <div class="embed-wrap">
           <iframe
             src="https://www.youtube.com/embed/OQg27gKyV54"
@@ -62,14 +63,14 @@ import Base from '../layouts/Base.astro';
           ></iframe>
         </div>
       </div>
+    </section>
 
-    </div>
-
-    <div class="tab-panel" id="tab-radio" role="tabpanel">
+    <section class="media-section" id="radio">
+      <h2 class="section-label">Radio</h2>
 
       <div class="media-embed-item">
-        <div class="media-outlet">ABC Radio Sydney Breakfast</div>
-        <div class="media-detail">With Craig Reucassel · <em>My Summer of Cricket</em> · October 2025</div>
+        <div class="media-outlet">ABC Radio Sydney Breakfast <span class="year">· October 2025</span></div>
+        <div class="media-detail">With Craig Reucassel · <em>My Summer of Cricket</em></div>
         <div class="embed-wrap embed-wrap--compact">
           <iframe
             src="https://www.youtube.com/embed/V4lMes--_Z4"
@@ -82,8 +83,8 @@ import Base from '../layouts/Base.astro';
       </div>
 
       <div class="media-embed-item">
-        <div class="media-outlet">ABC Radio Adelaide: SA &amp; NT Evenings</div>
-        <div class="media-detail">With Spence Denny · <em>My Summer of Cricket</em> · October 2025</div>
+        <div class="media-outlet">ABC Radio Adelaide: SA &amp; NT Evenings <span class="year">· October 2025</span></div>
+        <div class="media-detail">With Spence Denny · <em>My Summer of Cricket</em></div>
         <div class="embed-wrap embed-wrap--compact">
           <iframe
             src="https://www.youtube.com/embed/TH1V6_LWkP0"
@@ -97,42 +98,42 @@ import Base from '../layouts/Base.astro';
 
       <div class="media-item">
         <div class="media-info">
-          <div class="media-outlet">ABC Radio National: Life Matters</div>
-          <div class="media-detail">Closing sport's gender play gap · November 2025</div>
+          <div class="media-outlet">ABC Radio National: Life Matters <span class="year">· November 2025</span></div>
+          <div class="media-detail">Closing sport's gender play gap</div>
         </div>
         <a href="https://www.abc.net.au/listen/programs/lifematters/closing-sport-gender-play-gap/106034194" target="_blank" rel="noopener" class="media-link">Listen →</a>
       </div>
 
       <div class="media-item">
         <div class="media-info">
-          <div class="media-outlet">4BC Brisbane: Mornings with Ben Davis</div>
-          <div class="media-detail"><em>My Summer of Cricket</em> during the Ashes · December 2025</div>
+          <div class="media-outlet">4BC Brisbane: Mornings with Ben Davis <span class="year">· December 2025</span></div>
+          <div class="media-detail"><em>My Summer of Cricket</em> during the Ashes</div>
         </div>
         <a href="https://www.instagram.com/reel/DS2t-DpjMnZ/" target="_blank" rel="noopener" class="media-link">Listen →</a>
       </div>
 
       <div class="media-item">
         <div class="media-info">
-          <div class="media-outlet">Radio 5AA Adelaide: Afternoons with Angie McBride</div>
-          <div class="media-detail"><em>My Summer of Cricket</em> · February 2026</div>
+          <div class="media-outlet">Radio 5AA Adelaide: Afternoons with Angie McBride <span class="year">· February 2026</span></div>
+          <div class="media-detail"><em>My Summer of Cricket</em></div>
         </div>
         <a href="https://www.instagram.com/reel/DVKhJTjj5ip/" target="_blank" rel="noopener" class="media-link">Listen →</a>
       </div>
 
       <div class="media-item">
         <div class="media-info">
-          <div class="media-outlet">SBS Hindi</div>
+          <div class="media-outlet">SBS Hindi <span class="year">· November 2025</span></div>
           <div class="media-detail">Interview with Natasha Kaul · <em>My Summer of Cricket</em></div>
         </div>
         <a href="https://www.sbs.com.au/language/hindi/en/podcast-episode/debut-book-by-nikhil-kulkarni-celebrates-cricket-as-a-passionate-love-letter-to-the-game/l580pyr9h" target="_blank" rel="noopener" class="media-link">Listen →</a>
       </div>
+    </section>
 
-    </div>
-
-    <div class="tab-panel" id="tab-podcasts" role="tabpanel">
+    <section class="media-section" id="podcasts">
+      <h2 class="section-label">Podcasts</h2>
 
       <div class="media-embed-item">
-        <div class="media-outlet">Chats Over Chai</div>
+        <div class="media-outlet">Chats Over Chai <span class="year">· November 2025</span></div>
         <div class="media-detail">With The Hon. Lisa Singh</div>
         <iframe
           style="border-radius:8px"
@@ -146,7 +147,7 @@ import Base from '../layouts/Base.astro';
       </div>
 
       <div class="media-embed-item">
-        <div class="media-outlet">Conversations with Sports Fans</div>
+        <div class="media-outlet">Conversations with Sports Fans <span class="year">· November 2025</span></div>
         <div class="media-detail">Cricket Tragic · with Douglas Hill</div>
         <iframe
           style="border-radius:8px"
@@ -160,7 +161,7 @@ import Base from '../layouts/Base.astro';
       </div>
 
       <div class="media-embed-item">
-        <div class="media-outlet">Sport Nation Afternoon</div>
+        <div class="media-outlet">Sport Nation Afternoon <span class="year">· December 2025</span></div>
         <div class="media-detail">With Mark Stafford</div>
         <iframe
           style="border-radius:8px"
@@ -172,14 +173,14 @@ import Base from '../layouts/Base.astro';
           loading="lazy"
         ></iframe>
       </div>
+    </section>
 
-    </div>
-
-    <div class="tab-panel" id="tab-press" role="tabpanel">
+    <section class="media-section" id="press">
+      <h2 class="section-label">Press</h2>
 
       <div class="media-item">
         <div class="media-info">
-          <div class="media-outlet">Indian Link: Book Review</div>
+          <div class="media-outlet">Indian Link: Book Review <span class="year">· October 2025</span></div>
           <div class="media-detail">Review of <em>My Summer of Cricket</em></div>
         </div>
         <a href="https://www.indianlink.com.au/book-review-nikhil-kulkarnis-my-summer-of-cricket/" target="_blank" rel="noopener" class="media-link">Read →</a>
@@ -187,13 +188,12 @@ import Base from '../layouts/Base.astro';
 
       <div class="media-item">
         <div class="media-info">
-          <div class="media-outlet">Frontlist</div>
+          <div class="media-outlet">Frontlist <span class="year">· June 2026</span></div>
           <div class="media-detail">Author interview: what makes a true cricket fan?</div>
         </div>
         <a href="https://www.frontlist.in/interview-with-nikhil-kulkarni-author-of-my-summer-of-cricket" target="_blank" rel="noopener" class="media-link">Read →</a>
       </div>
-
-    </div>
+    </section>
 
     <div class="cta-block">
       <p>For media enquiries, please <a href="/contact">get in touch</a>. For op-eds and opinion writing, see the <a href="/writing">Writing page</a>.</p>
@@ -237,41 +237,70 @@ import Base from '../layouts/Base.astro';
 
   .content { max-width: 760px; }
 
-  /* ── Tabs ── */
-  .tab-nav {
+  /* ── Pill nav ── */
+  .pill-nav {
     display: flex;
-    gap: 0;
-    margin-bottom: 2rem;
-    border-bottom: 2px solid #e5e5e5;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 50;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e5e5e5;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
-  .tab-btn {
+  .pill {
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    color: #999;
-    background: none;
-    border: none;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -2px;
-    padding: 0.6rem 1.1rem;
-    cursor: pointer;
-    transition: color 0.2s, border-color 0.2s;
+    color: #666;
+    text-decoration: none;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
   }
 
-  .tab-btn:hover { color: #555; }
-
-  .tab-btn.active {
+  .pill:hover {
     color: #c2613f;
-    border-bottom-color: #c2613f;
+    border-color: #c2613f;
+    background: #fdf5f2;
   }
 
-  .tab-panel {
-    display: none;
+  .pill.active {
+    color: #fff;
+    background: #c2613f;
+    border-color: #c2613f;
   }
 
-  .tab-panel.active {
-    display: block;
+  /* ── Sections ── */
+  .media-section {
+    margin-bottom: 3.5rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px solid #e5e5e5;
+    scroll-margin-top: 4rem;
+  }
+
+  .media-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .section-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #1a1a1a;
   }
 
   /* ── Media items ── */
@@ -320,6 +349,7 @@ import Base from '../layouts/Base.astro';
     margin-bottom: 0.2rem;
   }
 
+
   .media-detail {
     font-family: 'Lora', serif;
     font-size: 0.88rem;
@@ -339,7 +369,7 @@ import Base from '../layouts/Base.astro';
   .media-link:hover { text-decoration: underline; }
 
   .cta-block {
-    margin-top: 2.5rem;
+    margin-top: 1rem;
     padding: 1.5rem;
     background: #fdf5f2;
     border-left: 4px solid #c2613f;
@@ -359,18 +389,12 @@ import Base from '../layouts/Base.astro';
 </style>
 
 <script>
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const tabPanels = document.querySelectorAll('.tab-panel');
+  const pills = document.querySelectorAll<HTMLAnchorElement>('.pill');
 
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = btn.dataset.tab;
-      tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
-      tabPanels.forEach(p => { p.classList.remove('active'); (p as HTMLElement).style.display = 'none'; });
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
-      const active = document.getElementById(`tab-${target}`);
-      if (active) { active.classList.add('active'); active.style.display = 'block'; }
+  pills.forEach((pill) => {
+    pill.addEventListener('click', () => {
+      pills.forEach((p) => p.classList.remove('active'));
+      pill.classList.add('active');
     });
   });
 </script>

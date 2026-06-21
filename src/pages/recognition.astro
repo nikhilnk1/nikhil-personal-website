@@ -6,12 +6,18 @@ import Base from '../layouts/Base.astro';
 
   <div class="page-header">
     <h1>Recognition & Honours</h1>
-    <p class="intro">Awards, honours, delegations, and appearances. A record of the work and its reception.</p>
+    <p class="intro">Recognised at key awards and honours, selected for prestigious delegations and programs, and invited to represent causes in cricket, community, and Australia–India engagement.</p>
   </div>
 
   <div class="content">
 
-    <div class="rec-section">
+    <nav class="pill-nav" aria-label="Jump to section">
+      <a href="#ambassador" class="pill">Ambassador Roles</a>
+      <a href="#awards" class="pill">Awards & Honours</a>
+      <a href="#programs" class="pill">Programs & Delegations</a>
+    </nav>
+
+    <section class="rec-section" id="ambassador">
       <span class="rec-label">Ambassador Roles</span>
       <div class="rec-items">
         <div class="rec-item">
@@ -19,9 +25,9 @@ import Base from '../layouts/Base.astro';
           <div class="rec-item-detail">The LBW Trust is a cricket-funded charity supporting education across India, Nepal, Sri Lanka, and Australia. Alongside international cricketers.</div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="rec-section">
+    <section class="rec-section" id="awards">
       <span class="rec-label">Awards &amp; Honours</span>
       <div class="rec-items">
         <div class="rec-item">
@@ -37,9 +43,9 @@ import Base from '../layouts/Base.astro';
           <div class="rec-item-detail">Awarded by the Australian Government. Granted only to individuals recognised as exceptional global talent.</div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="rec-section">
+    <section class="rec-section" id="programs">
       <span class="rec-label">Programs &amp; Delegations</span>
       <div class="rec-items">
         <div class="rec-item">
@@ -51,8 +57,7 @@ import Base from '../layouts/Base.astro';
           <div class="rec-item-detail">Selected as part of the Australian delegation. The pre-eminent track-two young leaders' dialogue between Australia and India, bringing together 15 of the best and brightest young minds from each country. Held alternately in Australia and India, the AIYD fosters enduring people-to-people relationships and collaborative initiatives that create sustainable outcomes for both countries.</div>
         </div>
       </div>
-    </div>
-
+    </section>
 
   </div>
 
@@ -61,7 +66,7 @@ import Base from '../layouts/Base.astro';
 <style>
   .page-header {
     padding: 3rem 0 2rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
   }
 
   h1 {
@@ -82,8 +87,58 @@ import Base from '../layouts/Base.astro';
 
   .content { max-width: 750px; }
 
+  /* ── Pill nav ── */
+  .pill-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 50;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e5e5e5;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .pill {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #666;
+    text-decoration: none;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+
+  .pill:hover {
+    color: #c2613f;
+    border-color: #c2613f;
+    background: #fdf5f2;
+  }
+
+  .pill.active {
+    color: #fff;
+    background: #c2613f;
+    border-color: #c2613f;
+  }
+
+  /* ── Sections ── */
   .rec-section {
     margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e5e5e5;
+    scroll-margin-top: 4rem;
+  }
+
+  .rec-section:last-of-type {
+    border-bottom: none;
   }
 
   .rec-label {
@@ -121,3 +176,14 @@ import Base from '../layouts/Base.astro';
     line-height: 1.65;
   }
 </style>
+
+<script>
+  const pills = document.querySelectorAll<HTMLAnchorElement>('.pill');
+
+  pills.forEach((pill) => {
+    pill.addEventListener('click', () => {
+      pills.forEach((p) => p.classList.remove('active'));
+      pill.classList.add('active');
+    });
+  });
+</script>
