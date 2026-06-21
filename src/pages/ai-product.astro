@@ -2,7 +2,200 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="AI & Product Leadership" description="Nikhil Kulkarni's career in AI and product leadership — Atlassian, Rovo, Flipkart, and beyond.">
-  <h1>AI &amp; Product Leadership</h1>
-  <p>Coming soon.</p>
+<Base title="AI & Product Leadership" description="Nikhil Kulkarni's career in AI and product leadership: Atlassian, Rovo, Flipkart, and startup advisory.">
+
+  <div class="page-header">
+    <h1>AI &amp; Product Leadership</h1>
+    <p class="intro">Nearly two decades building software products, from India's startup ecosystem to Flipkart to 7.5 years at Atlassian, including founding PM lead for Rovo, Atlassian's AI product.</p>
+  </div>
+
+  <div class="content">
+
+    <section class="summary-section">
+      <p>My career has spanned early-stage startups, high-growth scale-ups, and a global technology company. Across all of it, the through-line has been the same: using technology to create meaningful impact, for customers, teams, and the ecosystems around them.</p>
+      <p>I think carefully about how AI gets adopted in the enterprise, where it creates genuine value, and how to keep the human element strong. That's not just a talking point; it's what I spent three years doing as the founding PM on Rovo, signing Atlassian's first enterprise AI customers and leading them to success.</p>
+    </section>
+
+    <section class="cards-section">
+      <a href="/atlassian" class="role-card">
+        <div class="role-card-inner">
+          <div class="role-card-label">2018 – 2026</div>
+          <h2>Atlassian</h2>
+          <p>7.5 years at Atlassian, Sydney. Founding PM lead for Rovo (Atlassian's AI product). Led Jira Cloud performance initiative delivering a 30% improvement. Group Product Manager across Central AI and Jira Platform.</p>
+          <span class="role-card-link">Read more →</span>
+        </div>
+      </a>
+
+      <a href="/flipkart" class="role-card">
+        <div class="role-card-inner">
+          <div class="role-card-label">2011 – 2018</div>
+          <h2>Flipkart &amp; Indian Startups</h2>
+          <p>Six years at Flipkart building e-commerce logistics, digital media, and marketplace products, including Flyte (India's first legal MP3s store) and Smart Fulfilment (500+ SMB sellers). Earlier roles at Minglebox, Aurus Network, and Accel Partners.</p>
+          <span class="role-card-link">Read more →</span>
+        </div>
+      </a>
+
+      <a href="/advisory" class="role-card">
+        <div class="role-card-inner">
+          <div class="role-card-label">Ongoing</div>
+          <h2>Startup Advisory</h2>
+          <p>Working with early-stage founders on product strategy, go-to-market, and the India–Australia expansion path. Selective engagements where there's a genuine fit.</p>
+          <span class="role-card-link">Read more →</span>
+        </div>
+      </a>
+    </section>
+
+    <section class="themes-section">
+      <h2>How I think about AI</h2>
+      <div class="themes">
+        <div class="theme">
+          <h3>Adoption over capability</h3>
+          <p>Most enterprise AI fails not because the model is wrong, but because adoption is an afterthought. I've spent years thinking about what actually makes teams use AI in their daily workflows.</p>
+        </div>
+        <div class="theme">
+          <h3>Responsible by default</h3>
+          <p>AI that enterprises can trust requires deliberate choices at every layer: data, transparency, controls, and user experience. This isn't a compliance checkbox; it's what makes AI stick.</p>
+        </div>
+        <div class="theme">
+          <h3>The human element</h3>
+          <p>The best AI products augment human judgment rather than replace it. When we built Rovo, the question was never just "can AI do this?" but "does this actually make the person better at their job?"</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
 </Base>
+
+<style>
+  .page-header {
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 3rem;
+    max-width: 760px;
+  }
+
+  h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+  }
+
+  .intro {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.75;
+  }
+
+  .content { max-width: 900px; }
+
+  .summary-section {
+    max-width: 720px;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: #474747;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .cards-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .role-card {
+    text-decoration: none;
+    border: 1px solid #e5e5e5;
+    border-top: 4px solid #c2613f;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: block;
+  }
+
+  .role-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+
+  .role-card-inner {
+    padding: 1.5rem;
+  }
+
+  .role-card-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #c2613f;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.6rem;
+  }
+
+  .role-card p {
+    font-size: 0.92rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .role-card-link {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #c2613f;
+  }
+
+  .themes-section h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1.25rem;
+  }
+
+  .themes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .theme {
+    padding: 1.5rem;
+    background: #fdf5f2;
+    border-left: 4px solid #c2613f;
+  }
+
+  h3 {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+  }
+
+  .theme p {
+    font-size: 0.92rem;
+    color: #555;
+    margin-bottom: 0;
+  }
+</style>

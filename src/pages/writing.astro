@@ -2,7 +2,243 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="Writing & Commentary" description="Articles, opinion pieces, and blog posts by Nikhil Kulkarni.">
-  <h1>Writing &amp; Commentary</h1>
-  <p>Coming soon.</p>
+<Base title="Op-ed & Media Commentary" description="Nikhil Kulkarni's published writing: op-eds in the Sydney Morning Herald, AFR, Deccan Herald, Indian Link, and The Roar.">
+
+  <div class="page-header">
+    <p class="page-label">Writing</p>
+    <h1>Op-ed &amp; Media Commentary</h1>
+    <p class="intro">I write about technology, migration, cricket, and the Australia–India relationship. Published in the Sydney Morning Herald, Australian Financial Review, Deccan Herald, Indian Link, Canberra Times, and The Roar.</p>
+  </div>
+
+  <div class="content">
+
+    <section class="writing-section">
+      <h2>Sydney Morning Herald</h2>
+      <ul class="article-list">
+        <li>
+          <a href="https://www.smh.com.au/national/india-is-now-australia-s-no-1-source-of-migrants-it-s-a-profound-shift-and-a-positive-one-20260601-p602qt.html" target="_blank" rel="noopener">
+            India is now Australia's No.1 source of migrants. It's a profound shift — and a positive one
+          </a>
+          <span class="article-meta">June 2026</span>
+        </li>
+        <li>
+          <a href="https://www.smh.com.au/lifestyle/life-and-relationships/i-m-a-cricket-tragic-and-a-dad-this-statistic-saddens-me-20251118-p5ng6g.html" target="_blank" rel="noopener">
+            I'm a cricket tragic and a dad. This statistic saddens me
+          </a>
+          <span class="article-meta">November 2025</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="writing-section">
+      <h2>Australian Financial Review</h2>
+      <ul class="article-list">
+        <li>
+          <span class="article-title">BBL privatisation is not about control, but global relevance</span>
+          <span class="article-meta">May 2026</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="writing-section">
+      <h2>Deccan Herald</h2>
+      <ul class="article-list">
+        <li>
+          <a href="https://www.deccanherald.com/opinion/dear-dad-next-month-she-ll-watch-one-day-she-could-play-4016053" target="_blank" rel="noopener">
+            Dear Dad, next month she'll watch. One day, she could play
+          </a>
+          <span class="article-meta">May 2026 · Panorama section</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="writing-section">
+      <h2>Indian Link</h2>
+      <ul class="article-list">
+        <li>
+          <a href="https://www.indianlink.com.au/is-that-really-you-the-hidden-cost-of-letting-ai-do-the-talking-cognitive-debt/" target="_blank" rel="noopener">
+            Is that really you? The hidden cost of letting AI do the talking
+          </a>
+          <span class="article-meta">June 2026</span>
+        </li>
+        <li>
+          <span class="article-title">AirTrunk's India push shows where Australia's next tech opportunity lies</span>
+          <span class="article-meta">April 2026</span>
+        </li>
+        <li>
+          <span class="article-title">This holiday season, even ChatGPT wants a break</span>
+          <span class="article-meta">December 2025</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="writing-section">
+      <h2>Canberra Times &amp; The Roar</h2>
+      <ul class="article-list">
+        <li>
+          <span class="article-title">Cricket and gambling: a line that needs to hold</span>
+          <span class="article-meta">Canberra Times · September 2025</span>
+        </li>
+        <li>
+          <span class="article-title">The Ashes cheat sheet</span>
+          <span class="article-meta">The Roar · December 2025</span>
+        </li>
+        <li>
+          <span class="article-title">Travis Head statue? Here's the case</span>
+          <span class="article-meta">The Roar · December 2025</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="writing-section">
+      <h2>Themes</h2>
+      <div class="themes-grid">
+        <div class="theme">
+          <h3>Technology with purpose</h3>
+          <p>AI adoption, responsible technology, and what it actually takes for AI to create real-world impact.</p>
+        </div>
+        <div class="theme">
+          <h3>Migration &amp; identity</h3>
+          <p>Nuanced stories of migrants, belonging, and opportunity, especially in the Australia–India context.</p>
+        </div>
+        <div class="theme">
+          <h3>Cricket &amp; culture</h3>
+          <p>Using sport as a lens on identity, community, and cross-cultural understanding.</p>
+        </div>
+        <div class="theme">
+          <h3>Australia–India</h3>
+          <p>Trade, talent, technology, and the deepening relationship between two countries I call home.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
 </Base>
+
+<style>
+  .page-header {
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 3rem;
+    max-width: 760px;
+  }
+
+  .page-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c2613f;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+  }
+
+  .intro {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.75;
+  }
+
+  .content { max-width: 760px; }
+
+  .writing-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .writing-section:last-child { border-bottom: none; }
+
+  h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 1rem;
+  }
+
+  .article-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .article-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .article-list li:last-child { border-bottom: none; }
+
+  .article-list a {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: #1a1a1a;
+    text-decoration: none;
+    line-height: 1.5;
+    transition: color 0.2s;
+    flex: 1;
+  }
+
+  .article-list a:hover { color: #c2613f; }
+
+  .article-title {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: #474747;
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .article-meta {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.78rem;
+    color: #aaa;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .theme {
+    padding: 1.25rem;
+    background: #fafafa;
+    border-top: 3px solid #c2613f;
+  }
+
+  h3 {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.4rem;
+  }
+
+  .theme p {
+    font-family: 'Lora', serif;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.65;
+    margin: 0;
+  }
+</style>

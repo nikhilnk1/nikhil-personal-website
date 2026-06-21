@@ -30,6 +30,7 @@ export const navItems: NavItem[] = [
     children: [
       { label: 'Australia–India Bilateral', href: '/australia-india' },
       { label: 'iSPIRT Fellow',             href: '/ispirit' },
+      { label: 'LBW Trust Ambassador',      href: '/lbw-trust' },
     ],
   },
   {

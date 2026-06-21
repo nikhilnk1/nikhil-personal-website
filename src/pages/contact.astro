@@ -2,7 +2,157 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="Contact" description="Get in touch with Nikhil Kulkarni.">
-  <h1>Contact</h1>
-  <p>Coming soon.</p>
+<Base title="Contact" description="Get in touch with Nikhil Kulkarni: speaking, advisory, media, or just a conversation.">
+
+  <div class="page-header">
+    <h1>Get in touch</h1>
+    <p class="intro">Whether it's a speaking enquiry, advisory conversation, media request, or just something you'd like to discuss, I'd like to hear from you.</p>
+  </div>
+
+  <div class="content">
+
+    <div class="contact-grid">
+
+      <div class="contact-block">
+        <h2>Email</h2>
+        <a href="mailto:nikhilnk@gmail.com" class="contact-link-primary">nikhilnk@gmail.com</a>
+      </div>
+
+      <div class="contact-block">
+        <h2>LinkedIn</h2>
+        <a href="https://www.linkedin.com/in/nikhilnk/" target="_blank" rel="noopener" class="contact-link-primary">linkedin.com/in/nikhilnk</a>
+      </div>
+
+    </div>
+
+    <div class="topics">
+      <h2>What I'm happy to talk about</h2>
+      <ul>
+        <li><strong>Speaking engagements:</strong> AI, product leadership, Australia–India, career reinvention</li>
+        <li><strong>Startup advisory:</strong> early-stage product and go-to-market; India–Australia expansion</li>
+        <li><strong>Media &amp; commentary:</strong> AI, technology policy, migration, cricket</li>
+        <li><strong>Community collaborations:</strong> Australia–India bilateral, LBW Trust, tech ecosystem</li>
+        <li><strong>Mentoring:</strong> product managers, migrants navigating the Australian job market</li>
+      </ul>
+    </div>
+
+    <div class="social-block">
+      <h2>Find me online</h2>
+      <div class="social-links">
+        <a href="https://x.com/nikhilnk" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://www.instagram.com/nikhilnk1/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://mysummerofcricket.com" target="_blank" rel="noopener">My Summer of Cricket</a>
+      </div>
+    </div>
+
+  </div>
+
 </Base>
+
+<style>
+  .page-header {
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 3rem;
+    max-width: 680px;
+  }
+
+  h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+  }
+
+  .intro {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.75;
+  }
+
+  .content { max-width: 680px; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .contact-block h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 0.6rem;
+  }
+
+  .contact-link-primary {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #c2613f;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    transition: opacity 0.2s;
+  }
+
+  .contact-link-primary:hover { opacity: 0.75; }
+
+  .topics {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: #474747;
+    line-height: 1.75;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  li:last-child { border-bottom: none; }
+
+  strong { color: #1a1a1a; }
+
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .social-links a {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #474747;
+    text-decoration: none;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+
+  .social-links a:hover { color: #c2613f; }
+</style>

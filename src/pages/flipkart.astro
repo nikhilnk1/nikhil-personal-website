@@ -5,23 +5,87 @@ import Base from '../layouts/Base.astro';
 <Base title="Flipkart & Indian Startups" description="Nikhil Kulkarni's product leadership at Flipkart and work within India's startup ecosystem.">
 
   <div class="page-header">
+    <p class="page-label">AI &amp; Product</p>
     <h1>Flipkart &amp; Indian Startups</h1>
-    <p class="intro">Product leadership at Flipkart — building products at scale across e-commerce logistics and digital media — and early involvement in India's startup and software product ecosystem.</p>
+    <p class="intro">Six years building products at Flipkart, across logistics, digital media, and marketplace growth, alongside a decade volunteering in India's startup ecosystem.</p>
   </div>
 
-  <div class="placeholder-notice">
-    <p>Full page coming soon.</p>
-    <a href="/contact" class="cta-btn">Get in touch</a>
+  <div class="content">
+
+    <section class="role-section">
+      <h2>Flipkart</h2>
+      <p class="role-meta-block">December 2011 – July 2018 (with a gap) · Bengaluru</p>
+      <p>Flipkart was one of India's defining technology companies, building commerce infrastructure at a scale that shaped how hundreds of millions of people shop. I worked across three distinct product areas during my time there.</p>
+
+      <div class="sub-role">
+        <h3>Senior Product Manager, Selection</h3>
+        <p class="role-meta">January 2017 – July 2018</p>
+        <p>Led a PM team responsible for the Selection charter, systematically identifying selection gaps, surfacing insights from data, and helping sellers list the right products on Flipkart. The work strengthened both the marketplace and the customer experience.</p>
+      </div>
+
+      <div class="sub-role">
+        <h3>Product Manager, Smart Fulfilment &amp; Flipkart Fulfilment</h3>
+        <p class="role-meta">December 2014 – December 2016</p>
+        <p>Led <strong>Smart Fulfilment</strong>, an on-premise warehousing product that gave small and medium businesses a reliable way to participate in e-commerce logistics. The product scaled to 500+ sellers with near-zero cancellations and under 1% breaches. I also led Flipkart Fulfilment (Flipkart Advantage), growing participating sellers from under 50 to 500+, and mentored junior PMs.</p>
+      </div>
+
+      <div class="sub-role">
+        <h3>Product Manager, New Category Launches &amp; Navigation</h3>
+        <p class="role-meta">December 2011 – January 2013</p>
+        <p>Led product launches for new categories including <strong>Flyte</strong> (Flipkart's digital brand and India's first legal MP3s and eBooks store), along with Health &amp; Beauty, Baby Care, Clothing, Footwear, and Toys. Managed key navigation experiences across the Flipkart website including the homepage, category pages, and menus.</p>
+      </div>
+
+      <div class="highlight-grid">
+        <div class="highlight-item">
+          <span class="highlight-label">Smart Fulfilment scale</span>
+          <span class="highlight-value">500+ sellers · near-zero cancellations</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-label">Flyte</span>
+          <span class="highlight-value">India's first legal MP3s &amp; eBooks store</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-label">Flipkart Fulfilment growth</span>
+          <span class="highlight-value">&lt;50 → 500+ participating sellers</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section">
+      <h2>Earlier career in Indian startups</h2>
+      <p>Before Flipkart, I spent several years in India's early startup ecosystem, at a time when it was being built from scratch.</p>
+      <p>At <strong>Minglebox.com</strong> I was an early employee through its startup-to-scale journey, working across product management, product marketing, and client servicing for a platform that connected over four million students with more than 200 education providers.</p>
+      <p>At <strong>Aurus Network</strong>, I was part of the core team as Head of Business Development, driving growth for a company pioneering internet-based live, two-way HD classroom technology across India.</p>
+      <p>I also interned at <strong>Accel Partners</strong>, working with portfolio companies in education on brand building, monetisation, and product strategy.</p>
+    </section>
+
+    <section class="role-section">
+      <h2>iSPIRT: India's Software Product Think Tank</h2>
+      <p>Alongside my full-time roles, I spent over a decade contributing to India's software product ecosystem as a volunteer and eventually <strong>part-time Fellow at iSPIRT</strong>.</p>
+      <p>I devised, ran, and scaled programs that supported thousands of software product entrepreneurs, including high-profile events where India's top startups engaged directly with the Indian Minister for IT. I served as Program Manager for PlayBook RoundTables and the Product Showcase for the IT Minister, and volunteered at the NASSCOM Product Conclave in 2011 and 2012.</p>
+      <p><a href="/ispirit">Read more about the iSPIRT work →</a></p>
+    </section>
+
   </div>
 
 </Base>
 
 <style>
   .page-header {
-    padding: 3rem 0 2rem;
+    padding: 3rem 0 2.5rem;
     border-bottom: 1px solid #e5e5e5;
     margin-bottom: 3rem;
-    max-width: 700px;
+    max-width: 760px;
+  }
+
+  .page-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c2613f;
+    margin-bottom: 0.75rem;
   }
 
   h1 {
@@ -39,35 +103,92 @@ import Base from '../layouts/Base.astro';
     line-height: 1.75;
   }
 
-  .placeholder-notice {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    padding: 2.5rem;
-    background: #fdf5f2;
-    border-left: 4px solid #c2613f;
-    max-width: 560px;
+  .content { max-width: 760px; }
+
+  .role-section {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e5e5e5;
   }
 
-  .placeholder-notice p {
+  .role-section:last-child { border-bottom: none; }
+
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.3rem;
+  }
+
+  .role-meta-block {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 1rem;
+  }
+
+  .sub-role {
+    margin: 1.75rem 0;
+    padding-left: 1.25rem;
+    border-left: 3px solid #e5e5e5;
+  }
+
+  h3 {
+    font-family: 'Lora', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.15rem;
+  }
+
+  .role-meta {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.82rem;
+    color: #888;
+    margin-bottom: 0.6rem;
+  }
+
+  p {
     font-family: 'Lora', serif;
     font-size: 1rem;
-    color: #555;
-    margin: 0;
+    color: #474747;
+    line-height: 1.8;
+    margin-bottom: 0.85rem;
   }
 
-  .cta-btn {
+  strong { color: #1a1a1a; }
+
+  a { color: #c2613f; }
+
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: #fdf5f2;
+    border-left: 4px solid #c2613f;
+  }
+
+  .highlight-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .highlight-label {
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 0.875rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    background: #c2613f;
-    color: #fff;
-    text-decoration: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 4px;
-    transition: background 0.2s;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #c2613f;
   }
 
-  .cta-btn:hover { background: #a84e30; }
+  .highlight-value {
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+  }
 </style>

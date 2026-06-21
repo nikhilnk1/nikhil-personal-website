@@ -2,16 +2,203 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="In the Media" description="Nikhil Kulkarni's media appearances — TV, radio, podcasts, and press coverage.">
+<Base title="In the Media" description="Nikhil Kulkarni's media appearances: Channel 9, ABC Radio, SBS, and podcasts.">
 
   <div class="page-header">
+    <p class="page-label">About</p>
     <h1>In the Media</h1>
-    <p class="intro">TV appearances, radio interviews, podcast features, and press coverage — a record of Nikhil's public commentary across technology, cricket, and Australia–India affairs.</p>
+    <p class="intro">On cricket, <em>My Summer of Cricket</em>, Mastermind, sport, and the Australia–India relationship.</p>
   </div>
 
-  <div class="placeholder-notice">
-    <p>Full media page coming soon — appearances on Channel 9, ABC Radio, SBS, and podcast coverage of <em>My Summer of Cricket</em>.</p>
-    <a href="/contact" class="cta-btn">Media enquiries</a>
+  <div class="content">
+
+    <div class="tab-nav" role="tablist">
+      <button class="tab-btn active" data-tab="tv" role="tab" aria-selected="true">Television</button>
+      <button class="tab-btn" data-tab="radio" role="tab" aria-selected="false">Radio</button>
+      <button class="tab-btn" data-tab="podcasts" role="tab" aria-selected="false">Podcasts</button>
+      <button class="tab-btn" data-tab="press" role="tab" aria-selected="false">Press</button>
+    </div>
+
+    <div class="tab-panel active" id="tab-tv" role="tabpanel">
+
+      <div class="media-embed-item">
+        <div class="media-outlet">Channel 9: Today Extra</div>
+        <div class="media-detail">Interview on <em>My Summer of Cricket</em> · November 2025</div>
+        <div class="embed-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/3u32GKL4T9g"
+            title="Channel 9 Today Extra: My Summer of Cricket"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="media-embed-item">
+        <div class="media-outlet">Mastermind Australia</div>
+        <div class="media-detail">Contestant · 2024</div>
+        <div class="embed-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/FH66X_YsdtU"
+            title="Mastermind Australia 2024"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="media-embed-item">
+        <div class="media-outlet">Mastermind Australia</div>
+        <div class="media-detail">Contestant · 2020</div>
+        <div class="embed-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/OQg27gKyV54"
+            title="Mastermind Australia 2020"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="tab-radio" role="tabpanel">
+
+      <div class="media-embed-item">
+        <div class="media-outlet">ABC Radio Sydney Breakfast</div>
+        <div class="media-detail">With Craig Reucassel · <em>My Summer of Cricket</em> · October 2025</div>
+        <div class="embed-wrap embed-wrap--compact">
+          <iframe
+            src="https://www.youtube.com/embed/V4lMes--_Z4"
+            title="ABC Radio Sydney Breakfast: My Summer of Cricket"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="media-embed-item">
+        <div class="media-outlet">ABC Radio Adelaide: SA &amp; NT Evenings</div>
+        <div class="media-detail">With Spence Denny · <em>My Summer of Cricket</em> · October 2025</div>
+        <div class="embed-wrap embed-wrap--compact">
+          <iframe
+            src="https://www.youtube.com/embed/TH1V6_LWkP0"
+            title="ABC Radio Adelaide: My Summer of Cricket"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="media-item">
+        <div class="media-info">
+          <div class="media-outlet">ABC Radio National: Life Matters</div>
+          <div class="media-detail">Closing sport's gender play gap · November 2025</div>
+        </div>
+        <a href="https://www.abc.net.au/listen/programs/lifematters/closing-sport-gender-play-gap/106034194" target="_blank" rel="noopener" class="media-link">Listen →</a>
+      </div>
+
+      <div class="media-item">
+        <div class="media-info">
+          <div class="media-outlet">4BC Brisbane: Mornings with Ben Davis</div>
+          <div class="media-detail"><em>My Summer of Cricket</em> during the Ashes · December 2025</div>
+        </div>
+        <a href="https://www.instagram.com/reel/DS2t-DpjMnZ/" target="_blank" rel="noopener" class="media-link">Listen →</a>
+      </div>
+
+      <div class="media-item">
+        <div class="media-info">
+          <div class="media-outlet">Radio 5AA Adelaide: Afternoons with Angie McBride</div>
+          <div class="media-detail"><em>My Summer of Cricket</em> · February 2026</div>
+        </div>
+        <a href="https://www.instagram.com/reel/DVKhJTjj5ip/" target="_blank" rel="noopener" class="media-link">Listen →</a>
+      </div>
+
+      <div class="media-item">
+        <div class="media-info">
+          <div class="media-outlet">SBS Hindi</div>
+          <div class="media-detail">Interview with Natasha Kaul · <em>My Summer of Cricket</em></div>
+        </div>
+        <a href="https://www.sbs.com.au/language/hindi/en/podcast-episode/debut-book-by-nikhil-kulkarni-celebrates-cricket-as-a-passionate-love-letter-to-the-game/l580pyr9h" target="_blank" rel="noopener" class="media-link">Listen →</a>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="tab-podcasts" role="tabpanel">
+
+      <div class="media-embed-item">
+        <div class="media-outlet">Chats Over Chai</div>
+        <div class="media-detail">With The Hon. Lisa Singh</div>
+        <iframe
+          style="border-radius:8px"
+          src="https://open.spotify.com/embed/episode/2wpMdicWt95zkCI5r05XvD?utm_source=generator"
+          width="100%"
+          height="152"
+          frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <div class="media-embed-item">
+        <div class="media-outlet">Conversations with Sports Fans</div>
+        <div class="media-detail">Cricket Tragic · with Douglas Hill</div>
+        <iframe
+          style="border-radius:8px"
+          src="https://open.spotify.com/embed/episode/42CNNFlhadVcEAKIDE5luy?utm_source=generator"
+          width="100%"
+          height="152"
+          frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <div class="media-embed-item">
+        <div class="media-outlet">Sport Nation Afternoon</div>
+        <div class="media-detail">With Mark Stafford</div>
+        <iframe
+          style="border-radius:8px"
+          src="https://open.spotify.com/embed/episode/4qsiryMXNfQRxz18Zh0hyO?utm_source=generator"
+          width="100%"
+          height="152"
+          frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="tab-press" role="tabpanel">
+
+      <div class="media-item">
+        <div class="media-info">
+          <div class="media-outlet">Indian Link: Book Review</div>
+          <div class="media-detail">Review of <em>My Summer of Cricket</em></div>
+        </div>
+        <a href="https://www.indianlink.com.au/book-review-nikhil-kulkarnis-my-summer-of-cricket/" target="_blank" rel="noopener" class="media-link">Read →</a>
+      </div>
+
+      <div class="media-item">
+        <div class="media-info">
+          <div class="media-outlet">Frontlist</div>
+          <div class="media-detail">Author interview: what makes a true cricket fan?</div>
+        </div>
+        <a href="https://www.frontlist.in/interview-with-nikhil-kulkarni-author-of-my-summer-of-cricket" target="_blank" rel="noopener" class="media-link">Read →</a>
+      </div>
+
+    </div>
+
+    <div class="cta-block">
+      <p>For media enquiries, please <a href="/contact">get in touch</a>. For op-eds and opinion writing, see the <a href="/writing">Writing page</a>.</p>
+    </div>
+
   </div>
 
 </Base>
@@ -19,9 +206,18 @@ import Base from '../layouts/Base.astro';
 <style>
   .page-header {
     padding: 3rem 0 2rem;
-    border-bottom: 1px solid #e5e5e5;
-    margin-bottom: 3rem;
-    max-width: 700px;
+    margin-bottom: 1.5rem;
+    max-width: 760px;
+  }
+
+  .page-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c2613f;
+    margin-bottom: 0.75rem;
   }
 
   h1 {
@@ -39,37 +235,142 @@ import Base from '../layouts/Base.astro';
     line-height: 1.75;
   }
 
-  .placeholder-notice {
+  .content { max-width: 760px; }
+
+  /* ── Tabs ── */
+  .tab-nav {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    padding: 2.5rem;
-    background: #fdf5f2;
-    border-left: 4px solid #c2613f;
-    max-width: 560px;
+    gap: 0;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #e5e5e5;
   }
 
-  .placeholder-notice p {
+  .tab-btn {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #999;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    padding: 0.6rem 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .tab-btn:hover { color: #555; }
+
+  .tab-btn.active {
+    color: #c2613f;
+    border-bottom-color: #c2613f;
+  }
+
+  .tab-panel {
+    display: none;
+  }
+
+  .tab-panel.active {
+    display: block;
+  }
+
+  /* ── Media items ── */
+  .media-embed-item {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .media-embed-item:last-child { border-bottom: none; }
+
+  .media-embed-item .media-outlet { margin-bottom: 0.2rem; }
+  .media-embed-item .media-detail { margin-bottom: 0.75rem; }
+
+  .embed-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .embed-wrap--compact { padding-bottom: 35%; }
+
+  .embed-wrap iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+
+  .media-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .media-item:last-child { border-bottom: none; }
+
+  .media-outlet {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.2rem;
+  }
+
+  .media-detail {
     font-family: 'Lora', serif;
-    font-size: 1rem;
-    color: #555;
+    font-size: 0.88rem;
+    color: #666;
+  }
+
+  .media-link {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #c2613f;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .media-link:hover { text-decoration: underline; }
+
+  .cta-block {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: #fdf5f2;
+    border-left: 4px solid #c2613f;
+  }
+
+  .cta-block p {
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    color: #474747;
+    line-height: 1.7;
     margin: 0;
   }
 
-  .cta-btn {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 700;
-    background: #c2613f;
-    color: #fff;
-    text-decoration: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 4px;
-    transition: background 0.2s;
-  }
+  .cta-block a { color: #c2613f; }
 
-  .cta-btn:hover {
-    background: #a84e30;
-  }
+  em { font-style: italic; }
 </style>
+
+<script>
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      tabPanels.forEach(p => { p.classList.remove('active'); (p as HTMLElement).style.display = 'none'; });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      const active = document.getElementById(`tab-${target}`);
+      if (active) { active.classList.add('active'); active.style.display = 'block'; }
+    });
+  });
+</script>

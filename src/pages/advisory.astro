@@ -1,7 +1,204 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Startup Advisory" description="Nikhil Kulkarni — startup advisor and early-stage investor.">
-  <h1>Startup Advisory</h1>
-  <p>Coming soon.</p>
+
+<Base title="Startup Advisory" description="Nikhil Kulkarni's startup advisory work: helping early-stage founders with product strategy, go-to-market, and growth.">
+
+  <div class="page-header">
+    <p class="page-label">AI &amp; Product</p>
+    <h1>Startup Advisory</h1>
+    <p class="intro">Working with early-stage founders on product strategy, go-to-market, and what it actually takes to build something people want.</p>
+  </div>
+
+  <div class="content">
+
+    <section class="section">
+      <h2>What I bring</h2>
+      <p>Nearly two decades of product and technology experience, from early-stage Indian startups to Flipkart and 7.5 years at Atlassian, including founding PM lead for Rovo, Atlassian's AI product. I've built products across e-commerce, B2B SaaS, education, social networking, and AI, at every stage from idea to global scale.</p>
+    </section>
+
+    <section class="section">
+      <h2>Where's the best fit?</h2>
+      <p>I work best with founders who are figuring out product-market fit, building their first team, or thinking through how to position AI in their product.</p>
+    </section>
+
+    <section class="section">
+      <h2>How I work</h2>
+      <p>I ask sharp questions, push back where needed, and bring both a practitioner's perspective and an investor's eye.</p>
+    </section>
+
+    <section class="section">
+      <h2>Where I can help</h2>
+
+      <div class="help-group">
+        <h3 class="help-group-title">Strategic growth &amp; go-to-market</h3>
+        <div class="areas-grid">
+          <div class="area-card">
+            <h4>Customer development &amp; GTM</h4>
+            <p>Helping founders define their Ideal Customer Profile, refine outreach narratives and channels, and land their first non-friends-and-family customers.</p>
+          </div>
+          <div class="area-card">
+            <h4>Storytelling &amp; narrative</h4>
+            <p>Refining value propositions and communicating them effectively to investors, employees, and customers.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="help-group">
+        <h3 class="help-group-title">Product &amp; operational expertise</h3>
+        <div class="areas-grid">
+          <div class="area-card">
+            <h4>Product craft</h4>
+            <p>Helping teams build, scale, and mature their product functions, from early-stage chaos to structured, high-performing product practice.</p>
+          </div>
+          <div class="area-card">
+            <h4>AI advisory</h4>
+            <p>A critical and intentional lens on AI adoption, identifying where it makes sense to build or implement AI and how to demonstrate clear value rather than just capability.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="help-group">
+        <h3 class="help-group-title">Facilitation &amp; ecosystem</h3>
+        <div class="areas-grid">
+          <div class="area-card">
+            <h4>Networking &amp; introductions</h4>
+            <p>Facilitating high-value connections between founders, investors, and mentors across ecosystems.</p>
+          </div>
+          <div class="area-card">
+            <h4>Mentorship &amp; advisory</h4>
+            <p>Ongoing support as a thought partner and sounding board, showing up consistently, not just at the crisis moments.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Get in touch</h2>
+      <p>I'm selective about advisory engagements: I'd rather go deep with a small number of founders than spread thin. If you're working on something interesting and think there's a fit, I'd like to hear about it.</p>
+      <a href="/contact" class="cta-btn">Get in touch</a>
+    </section>
+
+  </div>
+
 </Base>
+
+<style>
+  .page-header {
+    padding: 3rem 0 0.25rem;
+    margin-bottom: 0.75rem;
+    max-width: 760px;
+  }
+
+  .page-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c2613f;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+  }
+
+  .intro {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.75;
+  }
+
+  .content { max-width: 760px; }
+
+  .section {
+    margin-bottom: 1.75rem;
+  }
+
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: #474747;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .help-group {
+    margin-bottom: 2rem;
+  }
+
+  .help-group:last-child { margin-bottom: 0; }
+
+  .help-group-title {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 0.85rem;
+  }
+
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .area-card {
+    padding: 1.5rem;
+    border: 1px solid #e5e5e5;
+    border-top: 3px solid #c2613f;
+  }
+
+  h3 {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+  }
+
+  h4 {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+  }
+
+  .area-card p {
+    font-size: 0.92rem;
+    margin-bottom: 0;
+    color: #555;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    background: #c2613f;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.65rem 1.4rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+
+  .cta-btn:hover { background: #a84e30; }
+</style>

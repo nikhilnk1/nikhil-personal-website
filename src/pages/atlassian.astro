@@ -1,7 +1,203 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Atlassian" description="Nikhil Kulkarni's work at Atlassian — founding PM lead for Rovo and the Central AI team.">
-  <h1>Atlassian</h1>
-  <p>Coming soon.</p>
+
+<Base title="Atlassian" description="Nikhil Kulkarni's 7.5 years at Atlassian, from Jira Cloud to founding the Central AI team and launching Rovo.">
+
+  <div class="page-header">
+    <p class="page-label">AI &amp; Product</p>
+    <h1>Atlassian</h1>
+    <p class="intro">7.5 years building products at one of Australia's great technology companies, from Jira Cloud performance to founding the Central AI team and launching Rovo.</p>
+  </div>
+
+  <div class="content">
+
+    <section class="role-section">
+      <div class="role-header">
+        <div>
+          <h2>Group Product Manager, Central AI</h2>
+          <p class="role-meta">July 2023 – March 2026 · Sydney</p>
+        </div>
+        <span class="role-badge">Most recent</span>
+      </div>
+      <p>I was a founding member of Atlassian's Central AI team and the founding PM lead for <strong>Rovo</strong>, Atlassian's AI product. I signed the first enterprise customers and led them through to success, including on stage at Atlassian Team '25 in Barcelona, where panelists from Opella, Honeywell, and Mercedes-Benz shared how Rovo was transforming how their teams worked.</p>
+      <p>My focus spanned responsible AI deployment, enterprise adoption, semantic search, AI experience design, and agentic workflow automation. I worked at the intersection of product, engineering, and go-to-market, building AI experiences that teams actually trust and use.</p>
+      <p>This role was impacted by Atlassian's March 2026 restructure, which affected 1,600 roles globally.</p>
+      <div class="highlight-grid">
+        <div class="highlight-item">
+          <span class="highlight-label">My role</span>
+          <span class="highlight-value">Founding PM lead, Rovo (Atlassian's AI product)</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-label">First enterprise customers</span>
+          <span class="highlight-value">Signed and showcased on stage at Team '25 Barcelona</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-label">Customer panelists</span>
+          <span class="highlight-value">Opella · Honeywell · Mercedes-Benz</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section">
+      <div class="role-header">
+        <div>
+          <h2>Group Product Manager, Jira Platform</h2>
+          <p class="role-meta">January 2022 – June 2023 · Sydney</p>
+        </div>
+      </div>
+      <p>Led a team of Product Managers across the Jira Platform, owning domains including Field Configuration, Permissions, and Workflows. My teams crafted administration experiences, owned critical backend APIs, and led microservices decomposition projects to improve scalability, performance, and developer experience.</p>
+    </section>
+
+    <section class="role-section">
+      <div class="role-header">
+        <div>
+          <h2>Senior &amp; Principal Product Manager, Jira Cloud Platform</h2>
+          <p class="role-meta">July 2018 – December 2021 · Sydney</p>
+        </div>
+      </div>
+      <p>Joined Atlassian in Sydney as a Senior PM on the Jira Cloud Platform team, working on foundational capabilities that power Jira at global scale. I progressed to Principal Product Manager for Jira Permissions, then into a Group PM role through Atlassian's Emerging Manager Program.</p>
+      <p>A major achievement was leading a <strong>company-wide initiative to improve Jira Cloud performance</strong>, coordinating across multiple teams and hundreds of engineers, delivering a 30% improvement within a year.</p>
+      <div class="highlight-grid">
+        <div class="highlight-item">
+          <span class="highlight-label">Performance outcome</span>
+          <span class="highlight-value">30% improvement in Jira Cloud performance in one year</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-label">Scope</span>
+          <span class="highlight-value">Coordinated across hundreds of engineers company-wide</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section">
+      <h2>Beyond the product role</h2>
+      <p>I co-founded Atlassian's first DEI hiring initiative in partnership with <strong>Talent Beyond Boundaries</strong>, designing and running a PM interview and hiring process for displaced skilled refugees. The initiative led to a displaced Afghan refugee securing both a role at Atlassian and Permanent Residency in Australia.</p>
+      <p>I also represented Atlassian on stage globally: speaking at <strong>Atlassian Team '24</strong> in Las Vegas on building AI experiences, moderating customer panels at <strong>Team '25</strong> in Barcelona and Anaheim, and speaking at <strong>Team on Tour</strong> events in Tokyo and Seoul.</p>
+    </section>
+
+  </div>
+
 </Base>
+
+<style>
+  .page-header {
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 3rem;
+    max-width: 760px;
+  }
+
+  .page-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c2613f;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+  }
+
+  .intro {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.75;
+  }
+
+  .content { max-width: 760px; }
+
+  .role-section {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .role-section:last-child { border-bottom: none; }
+
+  .role-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.2rem;
+  }
+
+  .role-meta {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  .role-badge {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: #fdf5f2;
+    color: #c2613f;
+    border: 1px solid #c2613f;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: #474747;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  strong { color: #1a1a1a; }
+
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: #fdf5f2;
+    border-left: 4px solid #c2613f;
+  }
+
+  .highlight-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .highlight-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #c2613f;
+  }
+
+  .highlight-value {
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+  }
+</style>
