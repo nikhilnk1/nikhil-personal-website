@@ -14,8 +14,8 @@ import Base from '../layouts/Base.astro';
 
     <nav class="pill-nav" aria-label="Jump to section">
       <a href="#television" class="pill">Television</a>
-      <a href="#radio" class="pill">Radio</a>
       <a href="#podcasts" class="pill">Podcasts</a>
+      <a href="#radio" class="pill">Radio</a>
       <a href="#press" class="pill">Press</a>
     </nav>
 
@@ -65,72 +65,36 @@ import Base from '../layouts/Base.astro';
       </div>
     </section>
 
-    <section class="media-section" id="radio">
-      <h2 class="section-label">Radio</h2>
-
-      <div class="media-embed-item">
-        <div class="media-outlet">ABC Radio Sydney Breakfast <span class="year">· October 2025</span></div>
-        <div class="media-detail">With Craig Reucassel · <em>My Summer of Cricket</em></div>
-        <div class="embed-wrap embed-wrap--compact">
-          <iframe
-            src="https://www.youtube.com/embed/V4lMes--_Z4"
-            title="ABC Radio Sydney Breakfast: My Summer of Cricket"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
-
-      <div class="media-embed-item">
-        <div class="media-outlet">ABC Radio Adelaide: SA &amp; NT Evenings <span class="year">· October 2025</span></div>
-        <div class="media-detail">With Spence Denny · <em>My Summer of Cricket</em></div>
-        <div class="embed-wrap embed-wrap--compact">
-          <iframe
-            src="https://www.youtube.com/embed/TH1V6_LWkP0"
-            title="ABC Radio Adelaide: My Summer of Cricket"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
-
-      <div class="media-item">
-        <div class="media-info">
-          <div class="media-outlet">ABC Radio National: Life Matters <span class="year">· November 2025</span></div>
-          <div class="media-detail">Closing sport's gender play gap</div>
-        </div>
-        <a href="https://www.abc.net.au/listen/programs/lifematters/closing-sport-gender-play-gap/106034194" target="_blank" rel="noopener" class="media-link">Listen →</a>
-      </div>
-
-      <div class="media-item">
-        <div class="media-info">
-          <div class="media-outlet">4BC Brisbane: Mornings with Ben Davis <span class="year">· December 2025</span></div>
-          <div class="media-detail"><em>My Summer of Cricket</em> during the Ashes</div>
-        </div>
-        <a href="https://www.instagram.com/reel/DS2t-DpjMnZ/" target="_blank" rel="noopener" class="media-link">Listen →</a>
-      </div>
-
-      <div class="media-item">
-        <div class="media-info">
-          <div class="media-outlet">Radio 5AA Adelaide: Afternoons with Angie McBride <span class="year">· February 2026</span></div>
-          <div class="media-detail"><em>My Summer of Cricket</em></div>
-        </div>
-        <a href="https://www.instagram.com/reel/DVKhJTjj5ip/" target="_blank" rel="noopener" class="media-link">Listen →</a>
-      </div>
-
-      <div class="media-item">
-        <div class="media-info">
-          <div class="media-outlet">SBS Hindi <span class="year">· November 2025</span></div>
-          <div class="media-detail">Interview with Natasha Kaul · <em>My Summer of Cricket</em></div>
-        </div>
-        <a href="https://www.sbs.com.au/language/hindi/en/podcast-episode/debut-book-by-nikhil-kulkarni-celebrates-cricket-as-a-passionate-love-letter-to-the-game/l580pyr9h" target="_blank" rel="noopener" class="media-link">Listen →</a>
-      </div>
-    </section>
-
     <section class="media-section" id="podcasts">
       <h2 class="section-label">Podcasts</h2>
+
+      <div class="media-embed-item">
+        <div class="media-outlet">Cricket Library Podcast <span class="year">· March 2026</span></div>
+        <div class="media-detail">With Matt Ellis · <em>My Summer of Cricket</em></div>
+        <iframe
+          style="border-radius:8px"
+          src="https://open.spotify.com/embed/episode/2RLFp7Pcp1O6FXVLld4ErR?utm_source=generator"
+          width="100%"
+          height="152"
+          frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <div class="media-embed-item">
+        <div class="media-outlet">Sport Nation Afternoon <span class="year">· December 2025</span></div>
+        <div class="media-detail">With Mark Stafford</div>
+        <iframe
+          style="border-radius:8px"
+          src="https://open.spotify.com/embed/episode/4qsiryMXNfQRxz18Zh0hyO?utm_source=generator"
+          width="100%"
+          height="152"
+          frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
 
       <div class="media-embed-item">
         <div class="media-outlet">Chats Over Chai <span class="year">· November 2025</span></div>
@@ -159,33 +123,69 @@ import Base from '../layouts/Base.astro';
           loading="lazy"
         ></iframe>
       </div>
+    </section>
 
-      <div class="media-embed-item">
-        <div class="media-outlet">Sport Nation Afternoon <span class="year">· December 2025</span></div>
-        <div class="media-detail">With Mark Stafford</div>
-        <iframe
-          style="border-radius:8px"
-          src="https://open.spotify.com/embed/episode/4qsiryMXNfQRxz18Zh0hyO?utm_source=generator"
-          width="100%"
-          height="152"
-          frameborder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe>
+    <section class="media-section" id="radio">
+      <h2 class="section-label">Radio</h2>
+
+      <div class="media-item">
+        <div class="media-info">
+          <div class="media-outlet">Radio 5AA Adelaide: Afternoons with Angie McBride <span class="year">· February 2026</span></div>
+          <div class="media-detail"><em>My Summer of Cricket</em></div>
+        </div>
+        <a href="https://www.instagram.com/reel/DVKhJTjj5ip/" target="_blank" rel="noopener" class="media-link">Listen →</a>
+      </div>
+
+      <div class="media-item">
+        <div class="media-info">
+          <div class="media-outlet">4BC Brisbane: Mornings with Ben Davis <span class="year">· December 2025</span></div>
+          <div class="media-detail"><em>My Summer of Cricket</em> during the Ashes</div>
+        </div>
+        <a href="https://www.instagram.com/reel/DS2t-DpjMnZ/" target="_blank" rel="noopener" class="media-link">Listen →</a>
+      </div>
+
+      <div class="media-item">
+        <div class="media-info">
+          <div class="media-outlet">ABC Radio National: Life Matters <span class="year">· November 2025</span></div>
+          <div class="media-detail">Closing sport's gender play gap</div>
+        </div>
+        <a href="https://www.abc.net.au/listen/programs/lifematters/closing-sport-gender-play-gap/106034194" target="_blank" rel="noopener" class="media-link">Listen →</a>
+      </div>
+
+      <div class="media-item">
+        <div class="media-info">
+          <div class="media-outlet">SBS Hindi <span class="year">· November 2025</span></div>
+          <div class="media-detail">Interview with Natasha Kaul · <em>My Summer of Cricket</em></div>
+        </div>
+        <a href="https://www.sbs.com.au/language/hindi/en/podcast-episode/debut-book-by-nikhil-kulkarni-celebrates-cricket-as-a-passionate-love-letter-to-the-game/l580pyr9h" target="_blank" rel="noopener" class="media-link">Listen →</a>
       </div>
 
       <div class="media-embed-item">
-        <div class="media-outlet">Cricket Library Podcast <span class="year">· March 2026</span></div>
-        <div class="media-detail">With Matt Ellis · <em>My Summer of Cricket</em></div>
-        <iframe
-          style="border-radius:8px"
-          src="https://open.spotify.com/embed/episode/2RLFp7Pcp1O6FXVLld4ErR?utm_source=generator"
-          width="100%"
-          height="152"
-          frameborder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe>
+        <div class="media-outlet">ABC Radio Sydney Breakfast <span class="year">· October 2025</span></div>
+        <div class="media-detail">With Craig Reucassel · <em>My Summer of Cricket</em></div>
+        <div class="embed-wrap embed-wrap--compact">
+          <iframe
+            src="https://www.youtube.com/embed/V4lMes--_Z4"
+            title="ABC Radio Sydney Breakfast: My Summer of Cricket"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="media-embed-item">
+        <div class="media-outlet">ABC Radio Adelaide: SA &amp; NT Evenings <span class="year">· October 2025</span></div>
+        <div class="media-detail">With Spence Denny · <em>My Summer of Cricket</em></div>
+        <div class="embed-wrap embed-wrap--compact">
+          <iframe
+            src="https://www.youtube.com/embed/TH1V6_LWkP0"
+            title="ABC Radio Adelaide: My Summer of Cricket"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </section>
 
