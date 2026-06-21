@@ -183,11 +183,29 @@ import Base from '../layouts/Base.astro';
 
 <script>
   const pills = document.querySelectorAll<HTMLAnchorElement>('.pill');
+  const sections = document.querySelectorAll<HTMLElement>('.rec-section');
+
+  function setActive(id: string) {
+    pills.forEach((p) => {
+      p.classList.toggle('active', p.getAttribute('href') === `#${id}`);
+    });
+  }
 
   pills.forEach((pill) => {
     pill.addEventListener('click', () => {
-      pills.forEach((p) => p.classList.remove('active'));
-      pill.classList.add('active');
+      const id = pill.getAttribute('href')?.slice(1);
+      if (id) setActive(id);
     });
   });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: '-40% 0px -50% 0px', threshold: 0 }
+  );
+
+  sections.forEach((section) => observer.observe(section));
 </script>
