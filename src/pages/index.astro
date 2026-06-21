@@ -370,18 +370,29 @@ const typeLabel: Record<string, string> = {
 
   @media (max-width: 640px) {
     .hero {
-      flex-direction: column-reverse;
+      flex-direction: column;
       min-height: unset;
     }
 
     .hero-img-wrap {
-      height: 56vw;
+      height: 72vw;
       flex: none;
+    }
+
+    .hero-img {
+      object-position: 50% 0%;
+    }
+
+    .hero-img-wrap::after {
+      background: linear-gradient(to bottom, transparent 40%, #f4f1ec 100%);
     }
 
     .hero-text {
       flex: none;
-      padding: 2rem 1.5rem 1.5rem;
+      padding: 0 1.5rem 1.5rem;
+      margin-top: -5rem;
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
