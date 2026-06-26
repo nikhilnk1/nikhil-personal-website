@@ -36,7 +36,7 @@ export const navItems: NavItem[] = [
   {
     label: 'Writing',
     children: [
-      { label: 'Book — My Summer of Cricket', href: '/book' },
+      { label: 'Book — My Summer of Cricket', href: '/my-summer-of-cricket' },
       { label: 'Op-ed & Media Commentary',    href: '/op-ed-and-media-commentary' },
     ],
   },
