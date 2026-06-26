@@ -6,4 +6,5 @@ summary: India is now Australia's largest migrant source — one of its most edu
 url: https://www.smh.com.au/national/india-is-now-australia-s-no-1-source-of-migrants-it-s-a-profound-shift-and-a-positive-one-20260601-p602qt.html
 publication: Sydney Morning Herald
 image: /images/writing-smh.jpg
+featured: true
 ---

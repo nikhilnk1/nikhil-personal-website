@@ -6,4 +6,5 @@ summary: I was invited to speak at the Australia-India Strategic and Technology 
 url: https://www.linkedin.com/feed/update/urn:li:activity:7463394285615468544/
 publication: Asia Society Australia & Ananta Aspen Centre
 image: /images/highlights/track-1-5-dialogue.jpg
+featured: true
 ---

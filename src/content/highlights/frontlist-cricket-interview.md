@@ -6,4 +6,5 @@ summary: Frontlist interviewed me about My Summer of Cricket — we talked crick
 url: https://www.frontlist.in/interview-with-nikhil-kulkarni-author-of-my-summer-of-cricket
 publication: Frontlist
 image: /images/highlights/frontlist-interview.png
+featured: true
 ---
