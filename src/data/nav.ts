@@ -20,6 +20,7 @@ export const navItems: NavItem[] = [
   {
     label: 'AI & Product',
     children: [
+      { label: 'Amsterdam Flames',             href: '/amsterdam-flames' },
       { label: 'Atlassian',                    href: '/atlassian' },
       { label: 'Flipkart & Indian Startups',   href: '/flipkart' },
       { label: 'Startup Advisory',             href: '/advisory' },
