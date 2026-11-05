@@ -11,6 +11,7 @@ const highlights = defineCollection({
     url: z.string().url().optional(),
     publication: z.string().optional(),
     image: z.string().optional(),
+    imagePosition: z.string().optional(),
     featured: z.boolean().default(true),
   }),
 });

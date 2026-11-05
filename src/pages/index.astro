@@ -57,11 +57,11 @@ const typeLabel: Record<string, string> = {
             item.data.url
               ? <a href={item.data.url} target="_blank" rel="noopener" class="highlight-img-link">
                   <div class="highlight-img-wrap">
-                    <img src={item.data.image} alt="" class="highlight-img" loading="lazy" />
+                    <img src={item.data.image} alt="" class="highlight-img" loading="lazy" style={item.data.imagePosition ? `object-position: ${item.data.imagePosition}` : undefined} />
                   </div>
                 </a>
               : <div class="highlight-img-wrap">
-                  <img src={item.data.image} alt="" class="highlight-img" loading="lazy" />
+                  <img src={item.data.image} alt="" class="highlight-img" loading="lazy" style={item.data.imagePosition ? `object-position: ${item.data.imagePosition}` : undefined} />
                 </div>
           )}
           <div class="highlight-body">
